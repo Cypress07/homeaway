@@ -55,6 +55,8 @@ class __TwigTemplate_5fb1e71885f9740eb986ac910de18033514c1db6f5abc3e32d18932000b
         </h5>
             <p class=\"card-text\">";
         // line 8
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["property"]) || array_key_exists("property", $context) ? $context["property"] : (function () { throw new RuntimeError('Variable "property" does not exist.', 8, $this->source); })()), "surface", [], "any", false, false, false, 8), "html", null, true);
+        echo " m² - ";
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["property"]) || array_key_exists("property", $context) ? $context["property"] : (function () { throw new RuntimeError('Variable "property" does not exist.', 8, $this->source); })()), "city", [], "any", false, false, false, 8), "html", null, true);
         echo " (";
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["property"]) || array_key_exists("property", $context) ? $context["property"] : (function () { throw new RuntimeError('Variable "property" does not exist.', 8, $this->source); })()), "postalCode", [], "any", false, false, false, 8), "html", null, true);
@@ -66,8 +68,7 @@ class __TwigTemplate_5fb1e71885f9740eb986ac910de18033514c1db6f5abc3e32d18932000b
         echo " €
         </div>
     </div>
-</div>
-";
+</div>";
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
 
@@ -88,7 +89,7 @@ class __TwigTemplate_5fb1e71885f9740eb986ac910de18033514c1db6f5abc3e32d18932000b
 
     public function getDebugInfo()
     {
-        return array (  65 => 10,  58 => 8,  52 => 5,  48 => 4,  43 => 1,);
+        return array (  67 => 10,  58 => 8,  52 => 5,  48 => 4,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -100,12 +101,11 @@ class __TwigTemplate_5fb1e71885f9740eb986ac910de18033514c1db6f5abc3e32d18932000b
                 {{ property.title }}
             </a>
         </h5>
-            <p class=\"card-text\">{{ property.city }} ({{ property.postalCode }}) </p>
+            <p class=\"card-text\">{{ property.surface }} m² - {{ property.city }} ({{ property.postalCode }}) </p>
         <div lcass=\"text-primary\" style=\"font-size: 2rem; font-weight: bold\">
             {{ property.formattedPrice }} €
         </div>
     </div>
-</div>
-", "property/_property.html.twig", "C:\\workspace\\homeaway\\templates\\property\\_property.html.twig");
+</div>", "property/_property.html.twig", "C:\\workspace\\homeaway\\templates\\property\\_property.html.twig");
     }
 }

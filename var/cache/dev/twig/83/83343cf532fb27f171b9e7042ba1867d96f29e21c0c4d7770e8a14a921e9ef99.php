@@ -65,7 +65,7 @@ class __TwigTemplate_491a6db765db105007961c48fb4ebe4030f85ea68a23a4c1b96aee6dab4
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Mon Agence";
+        echo "Votre Agence HomeAway";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -167,7 +167,7 @@ Vous trouverez parmi notre sélection de biens à la vente des appartements sur 
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title 'Mon Agence' %}
+{% block title 'Votre Agence HomeAway' %}
 
 {% block body %}
     <div class=\"jumbotron jumbotron-fluid text-center\">

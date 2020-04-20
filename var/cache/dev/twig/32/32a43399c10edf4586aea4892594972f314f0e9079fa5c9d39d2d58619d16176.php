@@ -72,7 +72,7 @@ class __TwigTemplate_5ca01c3d247f9400fe2e887a3e6d56391782f6778d3ffc91d77bec35662
 \t\t\t<a class=\"navbar-brand\" href=\"";
         // line 24
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
-        echo "\">Mon agence</a>
+        echo "\">HomeAway</a>
 
 \t\t\t<button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarColor03\" aria-controls=\"navbarColor03\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
 
@@ -267,7 +267,7 @@ class __TwigTemplate_5ca01c3d247f9400fe2e887a3e6d56391782f6778d3ffc91d77bec35662
 
 \t\t<nav class=\"navbar navbar-expand-lg navbar-dark bg-primary\">
 
-\t\t\t<a class=\"navbar-brand\" href=\"{{path('home')}}\">Mon agence</a>
+\t\t\t<a class=\"navbar-brand\" href=\"{{path('home')}}\">HomeAway</a>
 
 \t\t\t<button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarColor03\" aria-controls=\"navbarColor03\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
 
