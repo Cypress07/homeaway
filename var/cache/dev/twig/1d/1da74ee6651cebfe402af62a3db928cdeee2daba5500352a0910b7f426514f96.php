@@ -87,9 +87,51 @@ class __TwigTemplate_5bfd604daa714fbd58ea199387812f48e897d830ebe5fd992a87b68f223
         // line 6
         echo "
 <div class=\"container text-center mt-4\">
-      
-        <h1>Voir tous nos biens</h1>
-        
+   <h1>Voir tous nos biens</h1>
+
+        <div class=\"row\">
+
+   ";
+        // line 12
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["properties"]) || array_key_exists("properties", $context) ? $context["properties"] : (function () { throw new RuntimeError('Variable "properties" does not exist.', 12, $this->source); })()));
+        $context['loop'] = [
+          'parent' => $context['_parent'],
+          'index0' => 0,
+          'index'  => 1,
+          'first'  => true,
+        ];
+        if (is_array($context['_seq']) || (is_object($context['_seq']) && $context['_seq'] instanceof \Countable)) {
+            $length = count($context['_seq']);
+            $context['loop']['revindex0'] = $length - 1;
+            $context['loop']['revindex'] = $length;
+            $context['loop']['length'] = $length;
+            $context['loop']['last'] = 1 === $length;
+        }
+        foreach ($context['_seq'] as $context["_key"] => $context["property"]) {
+            // line 13
+            echo "        <div class=\"col-md-4\">
+        ";
+            // line 14
+            $this->loadTemplate("property/_property.html.twig", "property/index.html.twig", 14)->display($context);
+            // line 15
+            echo "        </div>
+        ";
+            ++$context['loop']['index0'];
+            ++$context['loop']['index'];
+            $context['loop']['first'] = false;
+            if (isset($context['loop']['length'])) {
+                --$context['loop']['revindex0'];
+                --$context['loop']['revindex'];
+                $context['loop']['last'] = 0 === $context['loop']['revindex0'];
+            }
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['property'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 16
+        echo "    
+        </div>
 </div>
 ";
         
@@ -112,7 +154,7 @@ class __TwigTemplate_5bfd604daa714fbd58ea199387812f48e897d830ebe5fd992a87b68f223
 
     public function getDebugInfo()
     {
-        return array (  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  133 => 16,  118 => 15,  116 => 14,  113 => 13,  96 => 12,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -124,10 +166,18 @@ class __TwigTemplate_5bfd604daa714fbd58ea199387812f48e897d830ebe5fd992a87b68f223
 {% block body %}
 
 <div class=\"container text-center mt-4\">
-      
-        <h1>Voir tous nos biens</h1>
-        
+   <h1>Voir tous nos biens</h1>
+
+        <div class=\"row\">
+
+   {% for property in properties %}
+        <div class=\"col-md-4\">
+        {% include 'property/_property.html.twig' %}
+        </div>
+        {% endfor %}    
+        </div>
 </div>
-{% endblock %}", "property/index.html.twig", "C:\\workspace\\homeaway\\templates\\property\\index.html.twig");
+{% endblock %}
+", "property/index.html.twig", "C:\\workspace\\homeaway\\templates\\property\\index.html.twig");
     }
 }
