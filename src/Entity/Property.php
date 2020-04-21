@@ -42,7 +42,7 @@ class Property
 
     /**
      * @ORM\Column(type="integer")
-     * @Assert\Range(min=10, max=800)
+     * @Assert\Range(min=10, max=400)
      */
     private $surface;
 

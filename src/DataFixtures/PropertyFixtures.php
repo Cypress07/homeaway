@@ -7,7 +7,7 @@ use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 use \Faker\Factory;
 
-class PropertyFixture extends Fixture
+class PropertyFixtures extends Fixture
 {
     public function load(ObjectManager $manager)
     {
@@ -19,7 +19,7 @@ class PropertyFixture extends Fixture
             $property
                     ->setTitle($faker->words(3, true))
                     ->setDescription($faker->sentences(3, true))
-                    ->setSurface($faker->numberBetween(30,600))
+                    ->setSurface($faker->numberBetween(30,400))
                     ->setRooms($faker->numberBetween(2,15))
                     ->setBedRooms($faker->numberBetween(1,11))
                     ->setFloor($faker->numberBetween(0, 15))

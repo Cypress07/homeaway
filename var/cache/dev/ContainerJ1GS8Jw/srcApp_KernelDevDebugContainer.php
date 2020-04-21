@@ -1,6 +1,6 @@
 <?php
 
-namespace ContainerB1TC93X;
+namespace ContainerJ1GS8Jw;
 
 use Symfony\Component\DependencyInjection\Argument\RewindableGenerator;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -3205,11 +3205,11 @@ class srcApp_KernelDevDebugContainer extends Container
         include_once \dirname(__DIR__, 4).'\\vendor\\doctrine\\doctrine-fixtures-bundle\\ORMFixtureInterface.php';
         include_once \dirname(__DIR__, 4).'\\vendor\\doctrine\\doctrine-fixtures-bundle\\Fixture.php';
         include_once \dirname(__DIR__, 4).'\\src\\DataFixtures\\AppFixtures.php';
-        include_once \dirname(__DIR__, 4).'\\src\\DataFixtures\\PropertyFixture.php';
+        include_once \dirname(__DIR__, 4).'\\src\\DataFixtures\\PropertyFixtures.php';
         include_once \dirname(__DIR__, 4).'\\src\\DataFixtures\\UserFixtures.php';
 
         $a = new \Doctrine\Bundle\FixturesBundle\Loader\SymfonyFixturesLoader($this);
-        $a->addFixtures([0 => ['fixture' => new \App\DataFixtures\AppFixtures(), 'groups' => []], 1 => ['fixture' => new \App\DataFixtures\PropertyFixture(), 'groups' => []], 2 => ['fixture' => new \App\DataFixtures\UserFixtures(($this->services['security.password_encoder'] ?? $this->getSecurity_PasswordEncoderService())), 'groups' => []]]);
+        $a->addFixtures([0 => ['fixture' => new \App\DataFixtures\AppFixtures(), 'groups' => []], 1 => ['fixture' => new \App\DataFixtures\PropertyFixtures(), 'groups' => []], 2 => ['fixture' => new \App\DataFixtures\UserFixtures(($this->services['security.password_encoder'] ?? $this->getSecurity_PasswordEncoderService())), 'groups' => []]]);
 
         $this->privates['doctrine.fixtures_load_command'] = $instance = new \Doctrine\Bundle\FixturesBundle\Command\LoadDataFixturesDoctrineCommand($a, ($this->services['doctrine'] ?? $this->getDoctrineService()));
 
@@ -4706,7 +4706,7 @@ class srcApp_KernelDevDebugContainer extends Container
 
         $this->privates['security.access_map'] = $instance = new \Symfony\Component\Security\Http\AccessMap();
 
-        $instance->add(new \Symfony\Component\HttpFoundation\RequestMatcher('^/admin'), [0 => 'ROLE_USER'], NULL);
+        $instance->add(new \Symfony\Component\HttpFoundation\RequestMatcher('^/admin'), [0 => 'ROLE_ADMIN'], NULL);
 
         return $instance;
     }
@@ -5022,7 +5022,7 @@ class srcApp_KernelDevDebugContainer extends Container
         include_once \dirname(__DIR__, 4).'\\vendor\\symfony\\security-core\\User\\PasswordUpgraderInterface.php';
         include_once \dirname(__DIR__, 4).'\\vendor\\symfony\\doctrine-bridge\\Security\\User\\EntityUserProvider.php';
 
-        return $this->privates['security.user.provider.concrete.in_database'] = new \Symfony\Bridge\Doctrine\Security\User\EntityUserProvider(($this->services['doctrine'] ?? $this->getDoctrineService()), 'App\\Entity\\User', 'email', NULL);
+        return $this->privates['security.user.provider.concrete.in_database'] = new \Symfony\Bridge\Doctrine\Security\User\EntityUserProvider(($this->services['doctrine'] ?? $this->getDoctrineService()), 'App\\Entity\\User', 'username', NULL);
     }
 
     /**

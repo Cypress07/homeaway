@@ -1,6 +1,6 @@
 <?php
 
-namespace ContainerQXxe0AY;
+namespace ContainerQWdt73E;
 
 use Symfony\Component\DependencyInjection\Argument\RewindableGenerator;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -1970,6 +1970,20 @@ class srcApp_KernelDevDebugContainer extends Container
     }
 
     /**
+     * Gets the private 'App\Form\PropertySearchType' shared autowired service.
+     *
+     * @return \App\Form\PropertySearchType
+     */
+    protected function getPropertySearchTypeService()
+    {
+        include_once \dirname(__DIR__, 4).'\\vendor\\symfony\\form\\FormTypeInterface.php';
+        include_once \dirname(__DIR__, 4).'\\vendor\\symfony\\form\\AbstractType.php';
+        include_once \dirname(__DIR__, 4).'\\src\\Form\\PropertySearchType.php';
+
+        return $this->privates['App\\Form\\PropertySearchType'] = new \App\Form\PropertySearchType();
+    }
+
+    /**
      * Gets the private 'App\Form\PropertyType' shared autowired service.
      *
      * @return \App\Form\PropertyType
@@ -2435,7 +2449,7 @@ class srcApp_KernelDevDebugContainer extends Container
         include_once \dirname(__DIR__, 4).'\\vendor\\symfony\\console\\Command\\Command.php';
         include_once \dirname(__DIR__, 4).'\\vendor\\symfony\\form\\Command\\DebugCommand.php';
 
-        $this->privates['console.command.form_debug'] = $instance = new \Symfony\Component\Form\Command\DebugCommand(($this->privates['form.registry'] ?? $this->getForm_RegistryService()), [0 => 'Symfony\\Component\\Form\\Extension\\Core\\Type', 1 => 'App\\Form', 2 => 'Symfony\\Bridge\\Doctrine\\Form\\Type'], [0 => 'App\\Form\\PropertyType', 1 => 'Symfony\\Component\\Form\\Extension\\Core\\Type\\FormType', 2 => 'Symfony\\Component\\Form\\Extension\\Core\\Type\\ChoiceType', 3 => 'Symfony\\Component\\Form\\Extension\\Core\\Type\\FileType', 4 => 'Symfony\\Bridge\\Doctrine\\Form\\Type\\EntityType'], [0 => 'Symfony\\Component\\Form\\Extension\\Core\\Type\\TransformationFailureExtension', 1 => 'Symfony\\Component\\Form\\Extension\\HttpFoundation\\Type\\FormTypeHttpFoundationExtension', 2 => 'Symfony\\Component\\Form\\Extension\\Validator\\Type\\FormTypeValidatorExtension', 3 => 'Symfony\\Component\\Form\\Extension\\Validator\\Type\\RepeatedTypeValidatorExtension', 4 => 'Symfony\\Component\\Form\\Extension\\Validator\\Type\\SubmitTypeValidatorExtension', 5 => 'Symfony\\Component\\Form\\Extension\\Validator\\Type\\UploadValidatorExtension', 6 => 'Symfony\\Component\\Form\\Extension\\Csrf\\Type\\FormTypeCsrfExtension', 7 => 'Symfony\\Component\\Form\\Extension\\DataCollector\\Type\\DataCollectorTypeExtension'], [0 => 'Symfony\\Component\\Form\\Extension\\Validator\\ValidatorTypeGuesser', 1 => 'Symfony\\Bridge\\Doctrine\\Form\\DoctrineOrmTypeGuesser'], ($this->privates['debug.file_link_formatter'] ?? $this->getDebug_FileLinkFormatterService()));
+        $this->privates['console.command.form_debug'] = $instance = new \Symfony\Component\Form\Command\DebugCommand(($this->privates['form.registry'] ?? $this->getForm_RegistryService()), [0 => 'Symfony\\Component\\Form\\Extension\\Core\\Type', 1 => 'App\\Form', 2 => 'Symfony\\Bridge\\Doctrine\\Form\\Type'], [0 => 'App\\Form\\PropertySearchType', 1 => 'App\\Form\\PropertyType', 2 => 'Symfony\\Component\\Form\\Extension\\Core\\Type\\FormType', 3 => 'Symfony\\Component\\Form\\Extension\\Core\\Type\\ChoiceType', 4 => 'Symfony\\Component\\Form\\Extension\\Core\\Type\\FileType', 5 => 'Symfony\\Bridge\\Doctrine\\Form\\Type\\EntityType'], [0 => 'Symfony\\Component\\Form\\Extension\\Core\\Type\\TransformationFailureExtension', 1 => 'Symfony\\Component\\Form\\Extension\\HttpFoundation\\Type\\FormTypeHttpFoundationExtension', 2 => 'Symfony\\Component\\Form\\Extension\\Validator\\Type\\FormTypeValidatorExtension', 3 => 'Symfony\\Component\\Form\\Extension\\Validator\\Type\\RepeatedTypeValidatorExtension', 4 => 'Symfony\\Component\\Form\\Extension\\Validator\\Type\\SubmitTypeValidatorExtension', 5 => 'Symfony\\Component\\Form\\Extension\\Validator\\Type\\UploadValidatorExtension', 6 => 'Symfony\\Component\\Form\\Extension\\Csrf\\Type\\FormTypeCsrfExtension', 7 => 'Symfony\\Component\\Form\\Extension\\DataCollector\\Type\\DataCollectorTypeExtension'], [0 => 'Symfony\\Component\\Form\\Extension\\Validator\\ValidatorTypeGuesser', 1 => 'Symfony\\Bridge\\Doctrine\\Form\\DoctrineOrmTypeGuesser'], ($this->privates['debug.file_link_formatter'] ?? $this->getDebug_FileLinkFormatterService()));
 
         $instance->setName('debug:form');
 
@@ -3191,11 +3205,11 @@ class srcApp_KernelDevDebugContainer extends Container
         include_once \dirname(__DIR__, 4).'\\vendor\\doctrine\\doctrine-fixtures-bundle\\ORMFixtureInterface.php';
         include_once \dirname(__DIR__, 4).'\\vendor\\doctrine\\doctrine-fixtures-bundle\\Fixture.php';
         include_once \dirname(__DIR__, 4).'\\src\\DataFixtures\\AppFixtures.php';
-        include_once \dirname(__DIR__, 4).'\\src\\DataFixtures\\PropertyFixture.php';
+        include_once \dirname(__DIR__, 4).'\\src\\DataFixtures\\PropertyFixtures.php';
         include_once \dirname(__DIR__, 4).'\\src\\DataFixtures\\UserFixtures.php';
 
         $a = new \Doctrine\Bundle\FixturesBundle\Loader\SymfonyFixturesLoader($this);
-        $a->addFixtures([0 => ['fixture' => new \App\DataFixtures\AppFixtures(), 'groups' => []], 1 => ['fixture' => new \App\DataFixtures\PropertyFixture(), 'groups' => []], 2 => ['fixture' => new \App\DataFixtures\UserFixtures(($this->services['security.password_encoder'] ?? $this->getSecurity_PasswordEncoderService())), 'groups' => []]]);
+        $a->addFixtures([0 => ['fixture' => new \App\DataFixtures\AppFixtures(), 'groups' => []], 1 => ['fixture' => new \App\DataFixtures\PropertyFixtures(), 'groups' => []], 2 => ['fixture' => new \App\DataFixtures\UserFixtures(($this->services['security.password_encoder'] ?? $this->getSecurity_PasswordEncoderService())), 'groups' => []]]);
 
         $this->privates['doctrine.fixtures_load_command'] = $instance = new \Doctrine\Bundle\FixturesBundle\Command\LoadDataFixturesDoctrineCommand($a, ($this->services['doctrine'] ?? $this->getDoctrineService()));
 
@@ -3666,12 +3680,14 @@ class srcApp_KernelDevDebugContainer extends Container
         include_once \dirname(__DIR__, 4).'\\vendor\\symfony\\form\\ResolvedFormTypeFactory.php';
 
         return $this->privates['form.registry'] = new \Symfony\Component\Form\FormRegistry([0 => new \Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension(new \Symfony\Component\DependencyInjection\Argument\ServiceLocator($this->getService, [
+            'App\\Form\\PropertySearchType' => ['privates', 'App\\Form\\PropertySearchType', 'getPropertySearchTypeService', false],
             'App\\Form\\PropertyType' => ['privates', 'App\\Form\\PropertyType', 'getPropertyTypeService', false],
             'Symfony\\Bridge\\Doctrine\\Form\\Type\\EntityType' => ['privates', 'form.type.entity', 'getForm_Type_EntityService', false],
             'Symfony\\Component\\Form\\Extension\\Core\\Type\\ChoiceType' => ['privates', 'form.type.choice', 'getForm_Type_ChoiceService', false],
             'Symfony\\Component\\Form\\Extension\\Core\\Type\\FileType' => ['services', 'form.type.file', 'getForm_Type_FileService', false],
             'Symfony\\Component\\Form\\Extension\\Core\\Type\\FormType' => ['privates', 'form.type.form', 'getForm_Type_FormService', false],
         ], [
+            'App\\Form\\PropertySearchType' => '?',
             'App\\Form\\PropertyType' => '?',
             'Symfony\\Bridge\\Doctrine\\Form\\Type\\EntityType' => '?',
             'Symfony\\Component\\Form\\Extension\\Core\\Type\\ChoiceType' => '?',
@@ -4690,7 +4706,7 @@ class srcApp_KernelDevDebugContainer extends Container
 
         $this->privates['security.access_map'] = $instance = new \Symfony\Component\Security\Http\AccessMap();
 
-        $instance->add(new \Symfony\Component\HttpFoundation\RequestMatcher('^/admin'), [0 => 'ROLE_USER'], NULL);
+        $instance->add(new \Symfony\Component\HttpFoundation\RequestMatcher('^/admin'), [0 => 'ROLE_ADMIN'], NULL);
 
         return $instance;
     }

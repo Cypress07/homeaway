@@ -116,11 +116,11 @@ class __TwigTemplate_7b64cc77ba1d0fe06923e6ff2c082e1c55ad021f98b454ebb88f04ad519
         // line 18
         echo "
     <h1 class=\"h3 mb-3 font-weight-normal\">Se connecter</h1>
-    <label for=\"inputEmail\">Email</label>
-    <input type=\"email\" value=\"";
+    <label for=\"inputUsername\">Nom d'utilisateur</label>
+    <input type=\"text\" value=\"";
         // line 21
         echo twig_escape_filter($this->env, (isset($context["last_username"]) || array_key_exists("last_username", $context) ? $context["last_username"] : (function () { throw new RuntimeError('Variable "last_username" does not exist.', 21, $this->source); })()), "html", null, true);
-        echo "\" name=\"email\" id=\"inputEmail\" class=\"form-control\" required autofocus>
+        echo "\" name=\"username\" id=\"inputUsername\" class=\"form-control\" required autofocus>
     <label for=\"inputPassword\">Mot de passe</label>
     <input type=\"password\" name=\"password\" id=\"inputPassword\" class=\"form-control\" required>
 
@@ -184,8 +184,8 @@ class __TwigTemplate_7b64cc77ba1d0fe06923e6ff2c082e1c55ad021f98b454ebb88f04ad519
     {% endif %}
 
     <h1 class=\"h3 mb-3 font-weight-normal\">Se connecter</h1>
-    <label for=\"inputEmail\">Email</label>
-    <input type=\"email\" value=\"{{ last_username }}\" name=\"email\" id=\"inputEmail\" class=\"form-control\" required autofocus>
+    <label for=\"inputUsername\">Nom d'utilisateur</label>
+    <input type=\"text\" value=\"{{ last_username }}\" name=\"username\" id=\"inputUsername\" class=\"form-control\" required autofocus>
     <label for=\"inputPassword\">Mot de passe</label>
     <input type=\"password\" name=\"password\" id=\"inputPassword\" class=\"form-control\" required>
 

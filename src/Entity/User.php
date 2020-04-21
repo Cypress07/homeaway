@@ -75,7 +75,7 @@ class User implements UserInterface,\Serializable
     }
         public function getRoles() {
         //doit retourner le tableau d eRoles dont l'utilisateur est membre
-        return ['ROLE_USER'];
+        return ['ROLE_ADMIN'];
     }
         public function getSalt() 
     {

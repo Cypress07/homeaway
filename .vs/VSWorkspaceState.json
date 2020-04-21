@@ -2,8 +2,11 @@
   "ExpandedNodes": [
     "",
     "\\src",
-    "\\src\\Controller"
+    "\\src\\Controller",
+    "\\templates",
+    "\\templates\\admin",
+    "\\templates\\admin\\property"
   ],
-  "SelectedNode": "\\src\\Controller\\SecurityController.php",
+  "SelectedNode": "\\src\\Controller\\HomeController.php",
   "PreviewInSolutionExplorer": false
 }
