@@ -130,6 +130,7 @@ $catalogue = new MessageCatalogue('fr', array (
   ),
   'form' => 
   array (
+    'Title' => 'Titre',
     'Rooms' => 'Pieces',
     'Bedrooms' => 'Chambres',
     'Floor' => 'Etage',
@@ -137,7 +138,7 @@ $catalogue = new MessageCatalogue('fr', array (
     'Heat' => 'Chauffage',
     'City' => 'Ville',
     'Address' => 'Adresse',
-    'Postal_code' => 'Code Postal',
+    'Postal code' => 'Code Postal',
     'Sold' => 'Vendu',
   ),
 ));

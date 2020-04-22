@@ -83,12 +83,12 @@ private $entityManager;
 
         }
 
-
         return $this->render('admin/property/edit.html.twig',[
             'property' => $property,
             'form' => $form->createView()
         ]);
     }
+    
     /**
     * @Route("/admin/property/{id}", name="admin.property.delete", methods="DELETE")
     * @return Response

@@ -8,10 +8,10 @@ return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\
     [
         'stdClass' => [
             'min' => [
-                9,
+                10,
             ],
             'max' => [
-                800,
+                400,
             ],
             'groups' => [
                 [

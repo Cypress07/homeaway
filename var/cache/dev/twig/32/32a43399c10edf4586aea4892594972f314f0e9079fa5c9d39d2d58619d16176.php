@@ -50,87 +50,93 @@ class __TwigTemplate_5ca01c3d247f9400fe2e887a3e6d56391782f6778d3ffc91d77bec35662
 \t<head>
 \t\t<meta charset=\"UTF-8\">
 
+
 \t\t<title>
 \t\t\t";
-        // line 8
-        $this->displayBlock('title', $context, $blocks);
         // line 9
+        $this->displayBlock('title', $context, $blocks);
+        // line 11
         echo "\t\t</title>
 
-\t\t";
-        // line 11
+\t\t<link href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh\" crossorigin=\"anonymous\"> ";
+        // line 13
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 16
-        echo "
+        // line 14
+        echo "\t\t<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.12/css/select2.min.css\">
 
-\t</head>
+\t\t</head>
 
-\t<body>
+\t\t<body>
 
-\t\t<nav class=\"navbar navbar-expand-lg navbar-dark bg-primary\">
+\t\t\t<nav class=\"navbar navbar-expand-lg navbar-dark bg-primary\">
 
-\t\t\t<a class=\"navbar-brand\" href=\"";
-        // line 24
+\t\t\t\t<a class=\"navbar-brand\" href=\"";
+        // line 22
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
         echo "\">HomeAway</a>
 
-\t\t\t<button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarColor03\" aria-controls=\"navbarColor03\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
+\t\t\t\t<button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarColor03\" aria-controls=\"navbarColor03\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
 
-\t\t\t\t<span class=\"navbar-toggler-icon\"></span>
+\t\t\t\t\t<span class=\"navbar-toggler-icon\"></span>
 
-\t\t\t</button>
+\t\t\t\t</button>
 
-\t\t\t<div class=\"collapse navbar-collapse\" id=\"navbarColor03\">
+\t\t\t\t<div class=\"collapse navbar-collapse\" id=\"navbarColor03\">
 
-\t\t\t\t<ul class=\"navbar-nav mr-auto\">
+\t\t\t\t\t<ul class=\"navbar-nav mr-auto\">
 
 
-\t\t\t\t\t<li class=\"nav-item\">
+\t\t\t\t\t\t<li class=\"nav-item\">
 
-\t\t\t\t\t\t<a class=\"nav-link ";
-        // line 39
-        if (((isset($context["current_menu"]) || array_key_exists("current_menu", $context)) && 0 === twig_compare((isset($context["current_menu"]) || array_key_exists("current_menu", $context) ? $context["current_menu"] : (function () { throw new RuntimeError('Variable "current_menu" does not exist.', 39, $this->source); })()), "properties"))) {
+\t\t\t\t\t\t\t<a class=\"nav-link ";
+        // line 37
+        if (((isset($context["current_menu"]) || array_key_exists("current_menu", $context)) && 0 === twig_compare((isset($context["current_menu"]) || array_key_exists("current_menu", $context) ? $context["current_menu"] : (function () { throw new RuntimeError('Variable "current_menu" does not exist.', 37, $this->source); })()), "properties"))) {
             echo "active ";
         }
         echo "\" href=\"";
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("property.index");
         echo "\">Acheter</a>
 
-\t\t\t\t\t</li>
+\t\t\t\t\t\t</li>
 
-\t\t\t\t</ul>
-\t\t\t\t";
-        // line 44
-        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 44, $this->source); })()), "user", [], "any", false, false, false, 44)) {
+\t\t\t\t\t</ul>
+\t\t\t\t\t";
+        // line 42
+        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 42, $this->source); })()), "user", [], "any", false, false, false, 42)) {
+            // line 43
+            echo "\t\t\t\t\t\t<ul class=\"navbar-nav\">
+\t\t\t\t\t\t\t<li class=\"nav-item\">
+\t\t\t\t\t\t\t\t<a href=\"";
             // line 45
-            echo "\t\t\t\t<ul class=\"navbar-nav\">
-\t\t\t\t\t<li class=\"nav-item\">
-\t\t\t\t\t<a href=\"";
-            // line 47
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("logout");
             echo "\" class=\"nav-link\">Se déconnecter</a>
-\t\t\t\t\t</li>
-\t\t\t\t</ul>
-\t\t\t\t";
+\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t</ul>
+\t\t\t\t\t";
         }
-        // line 51
-        echo "\t\t\t</div>
+        // line 49
+        echo "\t\t\t\t</div>
 
-\t\t</nav>
-
-\t\t";
-        // line 55
+\t\t\t</nav>
+\t\t\t";
+        // line 52
         $this->displayBlock('body', $context, $blocks);
-        // line 56
+        // line 53
         echo "
-
-\t\t";
-        // line 58
+\t\t\t<script src=\"https://code.jquery.com/jquery-3.5.0.slim.min.js\" integrity=\"sha256-MlusDLJIP1GRgLrOflUQtshyP0TwT/RHXsI1wWGnQhs=\" crossorigin=\"anonymous\"></script>
+\t\t\t<script src=\"https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js\" integrity=\"sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo\" crossorigin=\"anonymous\"></script>
+\t\t\t<script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js\" integrity=\"sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6\" crossorigin=\"anonymous\"></script>
+\t\t\t<script src=\"https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.12/js/select2.min.js\"></script>
+\t\t\t\t<script>
+\t\t\t\t\t\$('select').select2();
+\t\t\t\t</script>
+\t\t\t
+\t\t\t";
+        // line 62
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 67
-        echo "
-\t</body>
-</html>
+        // line 63
+        echo "\t\t</body>
+\t</html>
 ";
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -140,7 +146,7 @@ class __TwigTemplate_5ca01c3d247f9400fe2e887a3e6d56391782f6778d3ffc91d77bec35662
 
     }
 
-    // line 8
+    // line 9
     public function block_title($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -150,7 +156,8 @@ class __TwigTemplate_5ca01c3d247f9400fe2e887a3e6d56391782f6778d3ffc91d77bec35662
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "HomeAway";
+        echo "HomeAway
+\t\t\t";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -159,7 +166,7 @@ class __TwigTemplate_5ca01c3d247f9400fe2e887a3e6d56391782f6778d3ffc91d77bec35662
 
     }
 
-    // line 11
+    // line 13
     public function block_stylesheets($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -169,11 +176,6 @@ class __TwigTemplate_5ca01c3d247f9400fe2e887a3e6d56391782f6778d3ffc91d77bec35662
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
 
-        // line 12
-        echo "
-\t\t\t<link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css\" integrity=\"sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh\" crossorigin=\"anonymous\">
-
-\t\t";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -182,7 +184,7 @@ class __TwigTemplate_5ca01c3d247f9400fe2e887a3e6d56391782f6778d3ffc91d77bec35662
 
     }
 
-    // line 55
+    // line 52
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -200,7 +202,7 @@ class __TwigTemplate_5ca01c3d247f9400fe2e887a3e6d56391782f6778d3ffc91d77bec35662
 
     }
 
-    // line 58
+    // line 62
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -210,15 +212,6 @@ class __TwigTemplate_5ca01c3d247f9400fe2e887a3e6d56391782f6778d3ffc91d77bec35662
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 59
-        echo "
-\t\t\t<script src=\"https://code.jquery.com/jquery-3.4.1.slim.min.js\" integrity=\"sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n\" crossorigin=\"anonymous\"></script>
-
-\t\t\t<script src=\"https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js\" integrity=\"sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo\" crossorigin=\"anonymous\"></script>
-
-\t\t\t<script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js\" integrity=\"sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6\" crossorigin=\"anonymous\"></script>
-
-\t\t";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -239,7 +232,7 @@ class __TwigTemplate_5ca01c3d247f9400fe2e887a3e6d56391782f6778d3ffc91d77bec35662
 
     public function getDebugInfo()
     {
-        return array (  214 => 59,  204 => 58,  186 => 55,  173 => 12,  163 => 11,  144 => 8,  131 => 67,  129 => 58,  125 => 56,  123 => 55,  117 => 51,  110 => 47,  106 => 45,  104 => 44,  92 => 39,  74 => 24,  64 => 16,  62 => 11,  58 => 9,  56 => 8,  47 => 1,);
+        return array (  206 => 62,  188 => 52,  170 => 13,  150 => 9,  138 => 63,  136 => 62,  125 => 53,  123 => 52,  118 => 49,  111 => 45,  107 => 43,  105 => 42,  93 => 37,  75 => 22,  65 => 14,  63 => 13,  59 => 11,  57 => 9,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -250,69 +243,64 @@ class __TwigTemplate_5ca01c3d247f9400fe2e887a3e6d56391782f6778d3ffc91d77bec35662
 \t<head>
 \t\t<meta charset=\"UTF-8\">
 
+
 \t\t<title>
-\t\t\t{% block title %}HomeAway{% endblock %}
+\t\t\t{% block title %}HomeAway
+\t\t\t{% endblock %}
 \t\t</title>
 
-\t\t{% block stylesheets %}
+\t\t<link href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh\" crossorigin=\"anonymous\"> {% block stylesheets %}{% endblock %}
+\t\t<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.12/css/select2.min.css\">
 
-\t\t\t<link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css\" integrity=\"sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh\" crossorigin=\"anonymous\">
+\t\t</head>
 
-\t\t{% endblock %}
+\t\t<body>
 
+\t\t\t<nav class=\"navbar navbar-expand-lg navbar-dark bg-primary\">
 
-\t</head>
+\t\t\t\t<a class=\"navbar-brand\" href=\"{{path('home')}}\">HomeAway</a>
 
-\t<body>
+\t\t\t\t<button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarColor03\" aria-controls=\"navbarColor03\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
 
-\t\t<nav class=\"navbar navbar-expand-lg navbar-dark bg-primary\">
+\t\t\t\t\t<span class=\"navbar-toggler-icon\"></span>
 
-\t\t\t<a class=\"navbar-brand\" href=\"{{path('home')}}\">HomeAway</a>
+\t\t\t\t</button>
 
-\t\t\t<button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarColor03\" aria-controls=\"navbarColor03\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
+\t\t\t\t<div class=\"collapse navbar-collapse\" id=\"navbarColor03\">
 
-\t\t\t\t<span class=\"navbar-toggler-icon\"></span>
-
-\t\t\t</button>
-
-\t\t\t<div class=\"collapse navbar-collapse\" id=\"navbarColor03\">
-
-\t\t\t\t<ul class=\"navbar-nav mr-auto\">
+\t\t\t\t\t<ul class=\"navbar-nav mr-auto\">
 
 
-\t\t\t\t\t<li class=\"nav-item\">
+\t\t\t\t\t\t<li class=\"nav-item\">
 
-\t\t\t\t\t\t<a class=\"nav-link {% if current_menu is defined and current_menu=='properties' %}active {% endif %}\" href=\"{{path('property.index')}}\">Acheter</a>
+\t\t\t\t\t\t\t<a class=\"nav-link {% if current_menu is defined and current_menu=='properties' %}active {% endif %}\" href=\"{{path('property.index')}}\">Acheter</a>
 
-\t\t\t\t\t</li>
+\t\t\t\t\t\t</li>
 
-\t\t\t\t</ul>
-\t\t\t\t{% if app.user %}
-\t\t\t\t<ul class=\"navbar-nav\">
-\t\t\t\t\t<li class=\"nav-item\">
-\t\t\t\t\t<a href=\"{{ path ('logout') }}\" class=\"nav-link\">Se déconnecter</a>
-\t\t\t\t\t</li>
-\t\t\t\t</ul>
-\t\t\t\t{% endif %}
-\t\t\t</div>
+\t\t\t\t\t</ul>
+\t\t\t\t\t{% if app.user %}
+\t\t\t\t\t\t<ul class=\"navbar-nav\">
+\t\t\t\t\t\t\t<li class=\"nav-item\">
+\t\t\t\t\t\t\t\t<a href=\"{{ path ('logout') }}\" class=\"nav-link\">Se déconnecter</a>
+\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t</ul>
+\t\t\t\t\t{% endif %}
+\t\t\t\t</div>
 
-\t\t</nav>
+\t\t\t</nav>
+\t\t\t{% block body %}{% endblock %}
 
-\t\t{% block body %}{% endblock %}
-
-
-\t\t{% block javascripts %}
-
-\t\t\t<script src=\"https://code.jquery.com/jquery-3.4.1.slim.min.js\" integrity=\"sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n\" crossorigin=\"anonymous\"></script>
-
+\t\t\t<script src=\"https://code.jquery.com/jquery-3.5.0.slim.min.js\" integrity=\"sha256-MlusDLJIP1GRgLrOflUQtshyP0TwT/RHXsI1wWGnQhs=\" crossorigin=\"anonymous\"></script>
 \t\t\t<script src=\"https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js\" integrity=\"sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo\" crossorigin=\"anonymous\"></script>
-
 \t\t\t<script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js\" integrity=\"sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6\" crossorigin=\"anonymous\"></script>
-
-\t\t{% endblock %}
-
-\t</body>
-</html>
+\t\t\t<script src=\"https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.12/js/select2.min.js\"></script>
+\t\t\t\t<script>
+\t\t\t\t\t\$('select').select2();
+\t\t\t\t</script>
+\t\t\t
+\t\t\t{% block javascripts %}{% endblock %}
+\t\t</body>
+\t</html>
 ", "base.html.twig", "C:\\workspace\\homeaway\\templates\\base.html.twig");
     }
 }
