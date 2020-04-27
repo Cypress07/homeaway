@@ -217,7 +217,7 @@ class __TwigTemplate_2be858e709b00cc2a0c0042fafce1a4a837ff666c82d59fdca9f6df1268
             <td>{{ option.name }}</td>
            <td>
                     <a href=\"{{ path('admin.option.edit', {id: option.id}) }}\" class=\"btn btn-secondary\">Editer</a>
-                    <form method=\"POST\" action=\"{{ path('admin.option.delete', {id: option.id}) }}\" style=\"display :inline-block\" onsubmit=\"return confirm('Vous allez vraiment supprimer ce bien de façon permanente ?')\">
+                    <form method=\"POST\" action=\"{{ path ('admin.option.delete', {id: option.id}) }}\" style=\"display :inline-block\" onsubmit=\"return confirm('Vous allez vraiment supprimer ce bien de façon permanente ?')\">
                         <input type=\"hidden\" name=\"_method\" value=\"DELETE\">
                         <input type=\"hidden\" name=\"_token\" value=\"{{ csrf_token('delete' ~ option.id) }}\">
                         <button class=\"btn btn-danger\">Supprimer</button>

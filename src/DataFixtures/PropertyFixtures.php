@@ -13,7 +13,7 @@ class PropertyFixtures extends Fixture
     {
 
         $faker = Factory::create('fr_FR'); 
-        for ($i = 0; $i<20; $i++)
+        for ($i = 0; $i<100; $i++)
         {
             $property = new Property();
             $property
