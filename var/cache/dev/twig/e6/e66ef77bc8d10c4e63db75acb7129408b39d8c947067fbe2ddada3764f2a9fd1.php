@@ -47,13 +47,13 @@ class __TwigTemplate_3632378a84c2cc83e247761d3406aa3116ad5bce1668d89f9fdf06ab78a
             // line 3
             echo "    <img src=\"";
             echo twig_escape_filter($this->env, $this->extensions['Liip\ImagineBundle\Templating\FilterExtension']->filter($this->extensions['Vich\UploaderBundle\Twig\Extension\UploaderExtension']->asset((isset($context["property"]) || array_key_exists("property", $context) ? $context["property"] : (function () { throw new RuntimeError('Variable "property" does not exist.', 3, $this->source); })()), "imageFile"), "thumb"), "html", null, true);
-            echo "\" alt=\"card-img-top\" style=\"width: 100%; height: auto\">
+            echo "\" class=\"card-img-top\" style=\"width: 100%; height: auto\">
     ";
         } else {
             // line 5
             echo "        <img src=\"";
             echo twig_escape_filter($this->env, $this->extensions['Liip\ImagineBundle\Templating\FilterExtension']->filter("/images/properties/empty.jpg", "thumb"), "html", null, true);
-            echo "\" alt=\"card-img-top\" style=\"width: 100%; height: auto\">
+            echo "\" class=\"card-img-top\" style=\"width: 100%; height: auto\">
     ";
         }
         // line 7
@@ -84,7 +84,8 @@ class __TwigTemplate_3632378a84c2cc83e247761d3406aa3116ad5bce1668d89f9fdf06ab78a
         echo " €
         </div>
     </div>
-</div>";
+</div>
+";
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
 
@@ -112,9 +113,9 @@ class __TwigTemplate_3632378a84c2cc83e247761d3406aa3116ad5bce1668d89f9fdf06ab78a
     {
         return new Source("<div class=\"card mb-4\">
     {% if property.filename %}
-    <img src=\"{{ vich_uploader_asset(property, 'imageFile')  | imagine_filter('thumb') }}\" alt=\"card-img-top\" style=\"width: 100%; height: auto\">
+    <img src=\"{{ vich_uploader_asset(property, 'imageFile')  | imagine_filter('thumb') }}\" class=\"card-img-top\" style=\"width: 100%; height: auto\">
     {% else %}
-        <img src=\"{{ '/images/properties/empty.jpg'  | imagine_filter('thumb') }}\" alt=\"card-img-top\" style=\"width: 100%; height: auto\">
+        <img src=\"{{ '/images/properties/empty.jpg'  | imagine_filter('thumb') }}\" class=\"card-img-top\" style=\"width: 100%; height: auto\">
     {% endif %}
     <div class=\"card-body\">
         <h5 class=\"card-title\">
@@ -127,6 +128,7 @@ class __TwigTemplate_3632378a84c2cc83e247761d3406aa3116ad5bce1668d89f9fdf06ab78a
             {{ property.formattedPrice }} €
         </div>
     </div>
-</div>", "property/_property.html.twig", "C:\\workspace\\homeaway\\templates\\property\\_property.html.twig");
+</div>
+", "property/_property.html.twig", "C:\\workspace\\homeaway\\templates\\property\\_property.html.twig");
     }
 }

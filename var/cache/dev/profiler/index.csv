@@ -1702,3 +1702,12 @@ c8da73,127.0.0.1,GET,http://localhost:8000/,1588073720,,200
 9f4bd1,127.0.0.1,GET,http://localhost:8000/biens,1588073722,,200
 d2b762,127.0.0.1,GET,http://localhost:8000/biens/quo-eaque-expedita-89,1588073724,,200
 672460,127.0.0.1,GET,http://localhost:8000/biens?maxPrice=20000000&minSurface=100,1588073749,,200
+bfc2d4,127.0.0.1,GET,http://localhost:8000/,1588082516,,200
+bbbcb7,127.0.0.1,GET,http://localhost:8000/favicon.ico,1588082516,c25dcc,404
+c25dcc,127.0.0.1,GET,http://localhost:8000/favicon.ico,1588082516,,404
+c2d1e1,127.0.0.1,GET,http://localhost:8000/biens,1588082518,,200
+37d0b7,127.0.0.1,GET,http://localhost:8000/biens,1588083061,,200
+ae7511,127.0.0.1,GET,http://localhost:8000/biens,1588083064,,200
+db29b1,127.0.0.1,GET,http://localhost:8000/biens/quo-eaque-expedita-89,1588083065,,200
+5d98c7,127.0.0.1,GET,http://localhost:8000/biens,1588083109,,200
+29cfca,127.0.0.1,GET,http://localhost:8000/biens,1588084022,,200

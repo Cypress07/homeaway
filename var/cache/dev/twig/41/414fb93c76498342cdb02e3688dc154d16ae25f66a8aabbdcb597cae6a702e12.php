@@ -96,13 +96,13 @@ class __TwigTemplate_081171a55bb70d1a5d7db93ee4a17f53d691d68d440552feea32ede2449
             // line 13
             echo "                    <img src=\"";
             echo twig_escape_filter($this->env, $this->extensions['Liip\ImagineBundle\Templating\FilterExtension']->filter($this->extensions['Vich\UploaderBundle\Twig\Extension\UploaderExtension']->asset((isset($context["property"]) || array_key_exists("property", $context) ? $context["property"] : (function () { throw new RuntimeError('Variable "property" does not exist.', 13, $this->source); })()), "imageFile"), "medium"), "html", null, true);
-            echo "\" alt=\"card-img-top\" style=\"width: 100%; height: auto\">
+            echo "\" class=\"card-img-top\" style=\"width: 100%; height: auto\">
                 ";
         } else {
             // line 15
             echo "                    <img src=\"";
             echo twig_escape_filter($this->env, $this->extensions['Liip\ImagineBundle\Templating\FilterExtension']->filter("/images/properties/empty.jpg", "medium"), "html", null, true);
-            echo "\" alt=\"card-img-top\" style=\"width: 100%; height: auto\">
+            echo "\" alt=\"card-img-top\" class=\"width: 100%; height: auto\">
                 ";
         }
         // line 17
@@ -247,9 +247,9 @@ class __TwigTemplate_081171a55bb70d1a5d7db93ee4a17f53d691d68d440552feea32ede2449
         <div class=\"row\">
             <div class=\"col-md-8\">
                 {% if property.filename %}
-                    <img src=\"{{ vich_uploader_asset(property, 'imageFile')  | imagine_filter('medium') }}\" alt=\"card-img-top\" style=\"width: 100%; height: auto\">
+                    <img src=\"{{ vich_uploader_asset(property, 'imageFile')  | imagine_filter('medium') }}\" class=\"card-img-top\" style=\"width: 100%; height: auto\">
                 {% else %}
-                    <img src=\"{{ '/images/properties/empty.jpg'  | imagine_filter('medium') }}\" alt=\"card-img-top\" style=\"width: 100%; height: auto\">
+                    <img src=\"{{ '/images/properties/empty.jpg'  | imagine_filter('medium') }}\" alt=\"card-img-top\" class=\"width: 100%; height: auto\">
                 {% endif %}
            </div>
         
