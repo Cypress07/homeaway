@@ -331,7 +331,6 @@
               <parameter>360</parameter>
               <parameter>230</parameter>
             </parameter>
-            <parameter key="mode">outbound</parameter>
           </parameter>
         </parameter>
         <parameter key="post_processors" type="collection"/>
@@ -352,7 +351,6 @@
               <parameter>800</parameter>
               <parameter>530</parameter>
             </parameter>
-            <parameter key="mode">outbound</parameter>
           </parameter>
         </parameter>
         <parameter key="post_processors" type="collection"/>
