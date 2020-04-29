@@ -88,25 +88,26 @@ class __TwigTemplate_e883c09eaed7257da8ee0feb71e419ec65cdd11fb0d0945f2230fe29595
         echo "   <div class=\"container mt-4\">
     <h1>Gérer les biens</h1>
 
-    ";
+            ";
         // line 9
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 9, $this->source); })()), "flashes", [0 => "success"], "method", false, false, false, 9));
         foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
             // line 10
-            echo "\t\t\t\t\t<div class=\"alert alert-success\">
-\t\t\t\t\t\t";
+            echo "\t\t\t\t<div class=\"alert alert-success\">
+\t\t\t\t\t";
             // line 11
             echo twig_escape_filter($this->env, $context["message"], "html", null, true);
             echo "
-\t\t\t\t\t</div>
-\t\t\t\t";
+\t\t\t\t</div>
+\t\t\t";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
         // line 14
-        echo "    <table class=\"table table-striped\">
+        echo "
+    <table class=\"table table-striped\">
 
         <thead>
         <tr>
@@ -116,29 +117,29 @@ class __TwigTemplate_e883c09eaed7257da8ee0feb71e419ec65cdd11fb0d0945f2230fe29595
         </thead>
         <tbody>
         ";
-        // line 23
+        // line 24
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["properties"]) || array_key_exists("properties", $context) ? $context["properties"] : (function () { throw new RuntimeError('Variable "properties" does not exist.', 23, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["properties"]) || array_key_exists("properties", $context) ? $context["properties"] : (function () { throw new RuntimeError('Variable "properties" does not exist.', 24, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["property"]) {
-            // line 24
+            // line 25
             echo "        <tr>
             <td>";
-            // line 25
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["property"], "title", [], "any", false, false, false, 25), "html", null, true);
+            // line 26
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["property"], "title", [], "any", false, false, false, 26), "html", null, true);
             echo "</td>
            <td>
                     <a href=\"";
-            // line 27
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin.property.edit", ["id" => twig_get_attribute($this->env, $this->source, $context["property"], "id", [], "any", false, false, false, 27)]), "html", null, true);
+            // line 28
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin.property.edit", ["id" => twig_get_attribute($this->env, $this->source, $context["property"], "id", [], "any", false, false, false, 28)]), "html", null, true);
             echo "\" class=\"btn btn-secondary\">Editer</a>
                     <form method=\"POST\" action=\"";
-            // line 28
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin.property.delete", ["id" => twig_get_attribute($this->env, $this->source, $context["property"], "id", [], "any", false, false, false, 28)]), "html", null, true);
+            // line 29
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin.property.delete", ["id" => twig_get_attribute($this->env, $this->source, $context["property"], "id", [], "any", false, false, false, 29)]), "html", null, true);
             echo "\" style=\"display :inline-block\" onsubmit=\"return confirm('Vous allez vraiment supprimer ce bien de façon permanente ?')\">
                         <input type=\"hidden\" name=\"_method\" value=\"delete\">
                         <input type=\"hidden\" name=\"_token\" value=\"";
-            // line 30
-            echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken(("delete" . twig_get_attribute($this->env, $this->source, $context["property"], "id", [], "any", false, false, false, 30))), "html", null, true);
+            // line 31
+            echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken(("delete" . twig_get_attribute($this->env, $this->source, $context["property"], "id", [], "any", false, false, false, 31))), "html", null, true);
             echo "\">
                         <button class=\"btn btn-danger\">Supprimer</button>
                     </form>
@@ -150,13 +151,13 @@ class __TwigTemplate_e883c09eaed7257da8ee0feb71e419ec65cdd11fb0d0945f2230fe29595
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['property'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 37
+        // line 38
         echo "        </tbody>
     </table>
 
     <div class=\"text-right\">
     <a href=\"";
-        // line 41
+        // line 42
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin.property.new");
         echo "\" class=\"btn btn-primary\">Créer un nouveau bien</a>
     </div>
@@ -185,7 +186,7 @@ class __TwigTemplate_e883c09eaed7257da8ee0feb71e419ec65cdd11fb0d0945f2230fe29595
 
     public function getDebugInfo()
     {
-        return array (  160 => 41,  154 => 37,  141 => 30,  136 => 28,  132 => 27,  127 => 25,  124 => 24,  120 => 23,  109 => 14,  100 => 11,  97 => 10,  93 => 9,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  161 => 42,  155 => 38,  142 => 31,  137 => 29,  133 => 28,  128 => 26,  125 => 25,  121 => 24,  109 => 14,  100 => 11,  97 => 10,  93 => 9,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -198,11 +199,12 @@ class __TwigTemplate_e883c09eaed7257da8ee0feb71e419ec65cdd11fb0d0945f2230fe29595
    <div class=\"container mt-4\">
     <h1>Gérer les biens</h1>
 
-    {% for message in app.flashes('success') %}
-\t\t\t\t\t<div class=\"alert alert-success\">
-\t\t\t\t\t\t{{ message }}
-\t\t\t\t\t</div>
-\t\t\t\t{% endfor %}
+            {% for message in app.flashes('success') %}
+\t\t\t\t<div class=\"alert alert-success\">
+\t\t\t\t\t{{ message }}
+\t\t\t\t</div>
+\t\t\t{% endfor %}
+
     <table class=\"table table-striped\">
 
         <thead>

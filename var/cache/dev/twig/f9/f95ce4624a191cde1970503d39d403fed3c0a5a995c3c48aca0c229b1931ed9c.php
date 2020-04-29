@@ -88,19 +88,19 @@ class __TwigTemplate_0d5b9a8c616aebe5687742aa205e0c6233ea41e31662d9f154cfa37d76e
         echo "   <div class=\"container mt-4\">
     <h1>Gérer les options</h1>
 
-    ";
+            ";
         // line 9
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 9, $this->source); })()), "flashes", [0 => "success"], "method", false, false, false, 9));
         foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
             // line 10
-            echo "\t\t\t\t\t<div class=\"alert alert-success\">
-\t\t\t\t\t\t";
+            echo "\t\t\t\t<div class=\"alert alert-success\">
+\t\t\t\t\t";
             // line 11
             echo twig_escape_filter($this->env, $context["message"], "html", null, true);
             echo "
-\t\t\t\t\t</div>
-\t\t\t\t";
+\t\t\t\t</div>
+\t\t\t";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
@@ -198,11 +198,11 @@ class __TwigTemplate_0d5b9a8c616aebe5687742aa205e0c6233ea41e31662d9f154cfa37d76e
    <div class=\"container mt-4\">
     <h1>Gérer les options</h1>
 
-    {% for message in app.flashes('success') %}
-\t\t\t\t\t<div class=\"alert alert-success\">
-\t\t\t\t\t\t{{ message }}
-\t\t\t\t\t</div>
-\t\t\t\t{% endfor %}
+            {% for message in app.flashes('success') %}
+\t\t\t\t<div class=\"alert alert-success\">
+\t\t\t\t\t{{ message }}
+\t\t\t\t</div>
+\t\t\t{% endfor %}
     <table class=\"table table-striped\">
 
         <thead>
