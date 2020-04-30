@@ -148,6 +148,7 @@ $catalogue = new MessageCatalogue('fr', array (
     'Firstname' => 'Prénom',
     'Name' => 'Nom',
     'Phone' => 'Téléphone',
+    'Picture fils' => 'Images',
   ),
 ));
 

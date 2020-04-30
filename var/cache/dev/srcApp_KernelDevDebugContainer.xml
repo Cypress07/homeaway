@@ -106,6 +106,7 @@
     <parameter key="kernel.container_class">srcApp_KernelDevDebugContainer</parameter>
     <parameter key="container.dumper.inline_class_loader">true</parameter>
     <parameter key="container.dumper.inline_factories">true</parameter>
+    <parameter key="locale">fr</parameter>
     <parameter key="fragment.renderer.hinclude.global_template"></parameter>
     <parameter key="fragment.path">/_fragment</parameter>
     <parameter key="kernel.secret">%env(APP_SECRET)%</parameter>
@@ -1739,7 +1740,7 @@
             <argument>C:\workspace\homeaway\vendor\symfony\security-core/Resources/translations\security.fr.xlf</argument>
             <argument>C:\workspace\homeaway\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.fr.xliff</argument>
             <argument>C:\workspace\homeaway\vendor\vich\uploader-bundle/translations\VichUploaderBundle.fr.yml</argument>
-            <argument>C:\workspace\homeaway/translations\form.fr.yaml</argument>
+            <argument>C:\workspace\homeaway/translations\forms.fr.yaml</argument>
           </argument>
           <argument key="gl" type="collection">
             <argument>C:\workspace\homeaway\vendor\symfony\validator/Resources/translations\validators.gl.xlf</argument>
@@ -2033,7 +2034,7 @@
       </call>
       <call method="setFallbackLocales">
         <argument type="collection">
-          <argument>en</argument>
+          <argument>fr</argument>
         </argument>
       </call>
     </service>
