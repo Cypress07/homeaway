@@ -6,7 +6,7 @@
 use Symfony\Component\DependencyInjection\Dumper\Preloader;
 
 require dirname(__DIR__, 3).'\\vendor/autoload.php';
-require __DIR__.'/ContainerOCorn76/srcApp_KernelDevDebugContainer.php';
+require __DIR__.'/ContainerUpxXeD7/srcApp_KernelDevDebugContainer.php';
 
 $classes = [];
 $classes[] = 'Symfony\Bundle\FrameworkBundle\FrameworkBundle';
@@ -36,6 +36,7 @@ $classes[] = 'Symfony\Bundle\FrameworkBundle\EventListener\ResolveControllerName
 $classes[] = 'Symfony\Component\HttpFoundation\RequestMatcher';
 $classes[] = 'Symfony\Component\DependencyInjection\ServiceLocator';
 $classes[] = 'App\Controller\Admin\AdminOptionController';
+$classes[] = 'App\Controller\Admin\AdminPictureController';
 $classes[] = 'App\Controller\Admin\AdminPropertyController';
 $classes[] = 'App\Controller\HomeController';
 $classes[] = 'App\Controller\PropertyController';

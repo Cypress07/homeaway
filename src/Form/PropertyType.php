@@ -4,12 +4,16 @@ namespace App\Form;
 
 use App\Entity\Option;
 use App\Entity\Property;
-use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
-use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
+
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\HiddenType;
+
 
 class PropertyType extends AbstractType
 {
@@ -24,21 +28,25 @@ class PropertyType extends AbstractType
             ->add('floor')
             ->add('price')
             ->add('heat', ChoiceType::class, [
-                'choices' => $this->getChoices()
+                'choices' => $this->getChoices(),
+                // 'expanded' => true,
             ])
             ->add('options', EntityType::class, [
                 'class' => Option::class,
                 'required' => false,
                 'choice_label' => 'name',
-                'multiple' => true
+                'multiple' => true,
+                // 'expanded' => true,
             ])
-            ->add('imageFile', FileType::class,[
-                'required' => false
+            ->add('pictureFiles', FileType::class, [
+                'required' => false,
+                'multiple' => true,
             ])
             ->add('city')
             ->add('address')
             ->add('postal_code')
             ->add('sold')
+            
         ;
     }
 
@@ -46,16 +54,16 @@ class PropertyType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => Property::class,
-            'translation_domain' =>'form'
+            'translation_domain' => 'forms'
         ]);
     }
 
-    public function getChoices()
+    private function getChoices()
     {
         $choices = Property::HEAT;
-        $output =[];
-        foreach($choices as $key => $values){
-        $output[$values] = $key;
+        $output = [];
+        foreach($choices as $k => $v){
+            $output[$v] = $k;
         }
         return $output;
     }

@@ -483,6 +483,13 @@
         <argument type="service" id=".service_locator.vdmMuyE.App\Controller\Admin\AdminOptionController"/>
       </call>
     </service>
+    <service id="App\Controller\Admin\AdminPictureController" class="App\Controller\Admin\AdminPictureController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.vdmMuyE.App\Controller\Admin\AdminPictureController"/>
+      </call>
+    </service>
     <service id="App\Controller\Admin\AdminPropertyController" class="App\Controller\Admin\AdminPropertyController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -6205,6 +6212,9 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Admin\AdminOptionController" class="App\Controller\Admin\AdminOptionController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\AdminOptionController" class="App\Controller\Admin\AdminOptionController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\Admin\AdminOptionController" class="App\Controller\Admin\AdminOptionController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Admin\AdminPictureController" class="App\Controller\Admin\AdminPictureController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\AdminPictureController" class="App\Controller\Admin\AdminPictureController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\Admin\AdminPictureController" class="App\Controller\Admin\AdminPictureController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Admin\AdminPropertyController" class="App\Controller\Admin\AdminPropertyController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\AdminPropertyController" class="App\Controller\Admin\AdminPropertyController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\Admin\AdminPropertyController" class="App\Controller\Admin\AdminPropertyController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -6457,6 +6467,12 @@
         <argument key="option" type="service" id=".errored..service_locator.hx5iYvn.App\Entity\Option"/>
       </argument>
     </service>
+    <service id=".service_locator.VzqwDg9" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="picture" type="service" id=".errored..service_locator.VzqwDg9.App\Entity\Picture"/>
+      </argument>
+    </service>
     <service id=".service_locator.cmwrHo6" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -6488,12 +6504,13 @@
         <argument key="authenticationUtils" type="service" id="security.authentication_utils"/>
       </argument>
     </service>
-    <service id=".service_locator.AyVF6zj" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.sQ9dDwD" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\Admin\AdminOptionController::delete" type="service" id=".service_locator.hx5iYvn"/>
         <argument key="App\Controller\Admin\AdminOptionController::edit" type="service" id=".service_locator.hx5iYvn"/>
         <argument key="App\Controller\Admin\AdminOptionController::index" type="service" id=".service_locator.8qJ7kPN"/>
+        <argument key="App\Controller\Admin\AdminPictureController::delete" type="service" id=".service_locator.VzqwDg9"/>
         <argument key="App\Controller\Admin\AdminPropertyController::delete" type="service" id=".service_locator.cmwrHo6"/>
         <argument key="App\Controller\Admin\AdminPropertyController::edit" type="service" id=".service_locator.cmwrHo6"/>
         <argument key="App\Controller\HomeController::index" type="service" id=".service_locator.M6N8ZlA"/>
@@ -6503,6 +6520,7 @@
         <argument key="App\Controller\Admin\AdminOptionController:delete" type="service" id=".service_locator.hx5iYvn"/>
         <argument key="App\Controller\Admin\AdminOptionController:edit" type="service" id=".service_locator.hx5iYvn"/>
         <argument key="App\Controller\Admin\AdminOptionController:index" type="service" id=".service_locator.8qJ7kPN"/>
+        <argument key="App\Controller\Admin\AdminPictureController:delete" type="service" id=".service_locator.VzqwDg9"/>
         <argument key="App\Controller\Admin\AdminPropertyController:delete" type="service" id=".service_locator.cmwrHo6"/>
         <argument key="App\Controller\Admin\AdminPropertyController:edit" type="service" id=".service_locator.cmwrHo6"/>
         <argument key="App\Controller\HomeController:index" type="service" id=".service_locator.M6N8ZlA"/>
@@ -6809,6 +6827,12 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.vdmMuyE" method="withContext"/>
     </service>
+    <service id=".service_locator.vdmMuyE.App\Controller\Admin\AdminPictureController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\AdminPictureController"/>
+      <argument>App\Controller\Admin\AdminPictureController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.vdmMuyE" method="withContext"/>
+    </service>
     <service id=".service_locator.vdmMuyE.App\Controller\Admin\AdminPropertyController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator_context" id="App\Controller\Admin\AdminPropertyController"/>
       <argument>App\Controller\Admin\AdminPropertyController</argument>
@@ -6964,12 +6988,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator.AyVF6zj"/>
+      <argument type="service" id=".service_locator.sQ9dDwD"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver" public="false">
-      <argument type="service" id=".service_locator.AyVF6zj"/>
+      <argument type="service" id=".service_locator.sQ9dDwD"/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface" public="false">
       <argument type="collection"/>
@@ -6980,6 +7004,7 @@
       <factory class="Symfony\Component\HttpClient\HttpClient" method="create"/>
     </service>
     <service id=".errored..service_locator.hx5iYvn.App\Entity\Option" class="App\Entity\Option"/>
+    <service id=".errored..service_locator.VzqwDg9.App\Entity\Picture" class="App\Entity\Picture"/>
     <service id=".errored..service_locator.cmwrHo6.App\Entity\Property" class="App\Entity\Property"/>
     <service id=".errored..service_locator.1wU_5OY.App\Entity\Property" class="App\Entity\Property"/>
     <service id="console.command_loader" class="Symfony\Component\Console\CommandLoader\ContainerCommandLoader" public="true">
@@ -7426,7 +7451,7 @@
     <service id="Symfony\WebpackEncoreBundle\Asset\EntrypointLookupInterface" alias="webpack_encore.entrypoint_lookup[_default]"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.CmORmuK" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.AyVF6zj"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.sQ9dDwD"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
     <service id="Psr\Log\LoggerInterface $consoleLogger" alias="monolog.logger.console"/>
