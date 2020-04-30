@@ -26,11 +26,10 @@ return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\
                     'image/png',
                     'image/jpeg',
                     'image/jpg',
-                    'image/gif',
                 ],
             ],
             'mimeTypesMessage' => [
-                1 => 'formats autorisés: png, jpeg, jpg, gif',
+                1 => 'formats autorisés: jpeg, jpg',
             ],
             'binaryFormat' => [
                 1 => false,

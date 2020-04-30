@@ -43,41 +43,41 @@ class __TwigTemplate_e67bfd2a9a2720320ec1d786b05810a67342c834d1e2f2c623d68f2a8dd
         echo "<div class=\"card mb-4\">
     ";
         // line 2
-        if (twig_get_attribute($this->env, $this->source, (isset($context["property"]) || array_key_exists("property", $context) ? $context["property"] : (function () { throw new RuntimeError('Variable "property" does not exist.', 2, $this->source); })()), "filename", [], "any", false, false, false, 2)) {
+        if (twig_get_attribute($this->env, $this->source, (isset($context["property"]) || array_key_exists("property", $context) ? $context["property"] : (function () { throw new RuntimeError('Variable "property" does not exist.', 2, $this->source); })()), "picture", [], "any", false, false, false, 2)) {
             // line 3
-            echo "    <img src=\"";
-            echo twig_escape_filter($this->env, $this->extensions['Liip\ImagineBundle\Templating\FilterExtension']->filter($this->extensions['Vich\UploaderBundle\Twig\Extension\UploaderExtension']->asset((isset($context["property"]) || array_key_exists("property", $context) ? $context["property"] : (function () { throw new RuntimeError('Variable "property" does not exist.', 3, $this->source); })()), "imageFile"), "thumb"), "html", null, true);
-            echo "\" class=\"card-img-top\" style=\"width: 100%; height: auto\">
+            echo "        <img src=\"";
+            echo twig_escape_filter($this->env, $this->extensions['Liip\ImagineBundle\Templating\FilterExtension']->filter($this->extensions['Vich\UploaderBundle\Twig\Extension\UploaderExtension']->asset(twig_get_attribute($this->env, $this->source, (isset($context["property"]) || array_key_exists("property", $context) ? $context["property"] : (function () { throw new RuntimeError('Variable "property" does not exist.', 3, $this->source); })()), "picture", [], "any", false, false, false, 3), "imageFile"), "thumb"), "html", null, true);
+            echo "\" alt=\"card-img-top\" style=\"width: 100%; height:auto;\">
     ";
         } else {
             // line 5
             echo "        <img src=\"";
             echo twig_escape_filter($this->env, $this->extensions['Liip\ImagineBundle\Templating\FilterExtension']->filter("/images/properties/empty.jpg", "thumb"), "html", null, true);
-            echo "\" class=\"card-img-top\" style=\"width: 100%; height: auto\">
+            echo "\" alt=\"card-img-top\" style=\"width: 100%; height:auto;\">
     ";
         }
         // line 7
         echo "    <div class=\"card-body\">
         <h5 class=\"card-title\">
-            <a href=";
+            <a href=\"";
         // line 9
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("property.show", ["slug" => twig_get_attribute($this->env, $this->source, (isset($context["property"]) || array_key_exists("property", $context) ? $context["property"] : (function () { throw new RuntimeError('Variable "property" does not exist.', 9, $this->source); })()), "slug", [], "any", false, false, false, 9), "id" => twig_get_attribute($this->env, $this->source, (isset($context["property"]) || array_key_exists("property", $context) ? $context["property"] : (function () { throw new RuntimeError('Variable "property" does not exist.', 9, $this->source); })()), "id", [], "any", false, false, false, 9)]), "html", null, true);
-        echo ">
+        echo "\">
                 ";
         // line 10
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["property"]) || array_key_exists("property", $context) ? $context["property"] : (function () { throw new RuntimeError('Variable "property" does not exist.', 10, $this->source); })()), "title", [], "any", false, false, false, 10), "html", null, true);
         echo "
             </a>
         </h5>
-            <p class=\"card-text\">";
+        <p class=\"card-text\">";
         // line 13
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["property"]) || array_key_exists("property", $context) ? $context["property"] : (function () { throw new RuntimeError('Variable "property" does not exist.', 13, $this->source); })()), "surface", [], "any", false, false, false, 13), "html", null, true);
         echo " m² - ";
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["property"]) || array_key_exists("property", $context) ? $context["property"] : (function () { throw new RuntimeError('Variable "property" does not exist.', 13, $this->source); })()), "city", [], "any", false, false, false, 13), "html", null, true);
         echo " (";
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["property"]) || array_key_exists("property", $context) ? $context["property"] : (function () { throw new RuntimeError('Variable "property" does not exist.', 13, $this->source); })()), "postalCode", [], "any", false, false, false, 13), "html", null, true);
-        echo ") </p>
-        <div lcass=\"text-primary\" style=\"font-size: 2rem; font-weight: bold\">
+        echo ")</p>
+        <div class=\"text-primary\" style=\"font-size:2rem; font-weight: bold;\">
             ";
         // line 15
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["property"]) || array_key_exists("property", $context) ? $context["property"] : (function () { throw new RuntimeError('Variable "property" does not exist.', 15, $this->source); })()), "formattedPrice", [], "any", false, false, false, 15), "html", null, true);
@@ -112,19 +112,19 @@ class __TwigTemplate_e67bfd2a9a2720320ec1d786b05810a67342c834d1e2f2c623d68f2a8dd
     public function getSourceContext()
     {
         return new Source("<div class=\"card mb-4\">
-    {% if property.filename %}
-    <img src=\"{{ vich_uploader_asset(property, 'imageFile')  | imagine_filter('thumb') }}\" class=\"card-img-top\" style=\"width: 100%; height: auto\">
+    {% if property.picture %}
+        <img src=\"{{ vich_uploader_asset(property.picture, 'imageFile') | imagine_filter('thumb') }}\" alt=\"card-img-top\" style=\"width: 100%; height:auto;\">
     {% else %}
-        <img src=\"{{ '/images/properties/empty.jpg'  | imagine_filter('thumb') }}\" class=\"card-img-top\" style=\"width: 100%; height: auto\">
+        <img src=\"{{ '/images/properties/empty.jpg' | imagine_filter('thumb') }}\" alt=\"card-img-top\" style=\"width: 100%; height:auto;\">
     {% endif %}
     <div class=\"card-body\">
         <h5 class=\"card-title\">
-            <a href={{ path ('property.show', {slug: property.slug, id: property.id}) }}>
+            <a href=\"{{ path('property.show', {slug: property.slug, id: property.id}) }}\">
                 {{ property.title }}
             </a>
         </h5>
-            <p class=\"card-text\">{{ property.surface }} m² - {{ property.city }} ({{ property.postalCode }}) </p>
-        <div lcass=\"text-primary\" style=\"font-size: 2rem; font-weight: bold\">
+        <p class=\"card-text\">{{ property.surface }} m² - {{ property.city }} ({{ property.postalCode }})</p>
+        <div class=\"text-primary\" style=\"font-size:2rem; font-weight: bold;\">
             {{ property.formattedPrice }} €
         </div>
     </div>

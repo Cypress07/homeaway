@@ -12,6 +12,7 @@ use Vich\UploaderBundle\Templating\Helper\UploaderHelper;
 
 class ImageCacheSubscriber implements EventSubscriber
 {
+
     /**
      * @var CacheManager
      */
@@ -36,25 +37,22 @@ class ImageCacheSubscriber implements EventSubscriber
         ];
     }
 
-    public function preRemove(LifecycleEventArgs $args)
-    {
+    public function preRemove(LifecycleEventArgs $args) {
         $entity = $args->getEntity();
-        if (!$entity instanceof Picture){
+        if (!$entity instanceof Picture) {
             return;
         }
-        $this->cacheManager->remove($this->uploaderHelper->asset($entity,'imageFile'));
-
+        $this->cacheManager->remove($this->uploaderHelper->asset($entity, 'imageFile'));
     }
 
-    public function preUpdate(PreUpdateEventArgs $args)
-    {
+    public function preUpdate(PreUpdateEventArgs $args) {
         $entity = $args->getEntity();
-        if (!$entity instanceof Picture){
+        if (!$entity instanceof Picture) {
             return;
         }
-        if ($entity->getImageFile() instanceof UploadedFile)
-        {
-            $this->cacheManager->remove($this->uploaderHelper->asset($entity,'imageFile'));
+        if ($entity->getImageFile() instanceof UploadedFile) {
+            $this->cacheManager->remove($this->uploaderHelper->asset($entity, 'imageFile'));
         }
     }
+
 }

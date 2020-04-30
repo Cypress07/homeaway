@@ -9,20 +9,17 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Validator\Constraints as Assert;
-use Vich\UploaderBundle\Mapping\Annotation as Vich;
-
 
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\PropertyRepository")
  * @UniqueEntity("title")
- * @Vich\Uploadable
- */
+  */
 class Property
 {
     const HEAT = [
-        0 => 'Electrique',
-        1 => 'Gaz'
+        0 => 'Electric',
+        1 => 'Gas'
     ];
 
     /**
@@ -43,7 +40,7 @@ class Property
       * @ORM\Column(type="datetime", nullable=true)
       */
      private $updated_at;
-    
+
     /**
      * @ORM\Column(type="string", length=255)
      * @Assert\Length(min = 5, max = 255)
@@ -127,8 +124,8 @@ class Property
      *   @Assert\Image(
      *     maxSize="1000k",
      *     maxSizeMessage="Le fichier excède 1000Ko.",
-     *     mimeTypes={"image/png", "image/jpeg", "image/jpg", "image/gif"},
-     *     mimeTypesMessage= "formats autorisés: png, jpeg, jpg, gif"
+     *     mimeTypes={"image/png", "image/jpeg", "image/jpg"},
+     *     mimeTypesMessage= "formats autorisés: jpeg, jpg"
      *   )
      * })
      */
@@ -141,7 +138,7 @@ class Property
         $this->created_at = new \Datetime();
         $this->pictures = new ArrayCollection();
     }
-    
+
     public function getId(): ?int
     {
         return $this->id;
@@ -161,7 +158,7 @@ class Property
 
     public function getSlug() : string
     {
-        return (new Slugify())->slugify($this->title); 
+        return (new Slugify())->slugify($this->title);
     }
 
     public function getDescription(): ?string
@@ -343,31 +340,6 @@ class Property
         return $this;
     }
 
-
-     /**
-      * Get the value of fileName
-      *
-      * @return  string|null
-      */ 
-     public function getFileName()
-     {
-         return $this->fileName;
-    }
-
-     /**
-      * Set the value of fileName
-      *
-      * @param  string|null  $fileName
-      *
-        * @return  self
-      */ 
-     public function setFileName($fileName)
-     {
-         $this->fileName = $fileName;
-
-         return $this;
-     }
-
      public function getUpdatedAt(): ?\DateTimeInterface
      {
          return $this->updated_at;
@@ -421,7 +393,8 @@ class Property
 
     /**
      * Get maxSize="1000k",
-     */ 
+     * @return mixed
+     */
     public function getPictureFiles()
     {
         return $this->pictureFiles;
@@ -429,9 +402,9 @@ class Property
 
     /**
      * Set maxSize="1000k",
-     *
+     * @param mixed $pictureFiles
      * @return  self
-     */ 
+     */
     public function setPictureFiles($pictureFiles)
     {
         foreach($pictureFiles as $pictureFile) {

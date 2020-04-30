@@ -6,7 +6,7 @@
 use Symfony\Component\DependencyInjection\Dumper\Preloader;
 
 require dirname(__DIR__, 3).'\\vendor/autoload.php';
-require __DIR__.'/Container6NbExNL/srcApp_KernelDevDebugContainer.php';
+require __DIR__.'/ContainerI0Q0Op0/srcApp_KernelDevDebugContainer.php';
 
 $classes = [];
 $classes[] = 'Symfony\Bundle\FrameworkBundle\FrameworkBundle';
@@ -47,6 +47,7 @@ $classes[] = 'App\Form\PropertySearchType';
 $classes[] = 'App\Form\PropertyType';
 $classes[] = 'App\Notification\ContactNotification';
 $classes[] = 'App\Repository\OptionRepository';
+$classes[] = 'App\Repository\PictureRepository';
 $classes[] = 'App\Repository\PropertyRepository';
 $classes[] = 'App\Repository\PropertySearchRepository';
 $classes[] = 'App\Repository\UserRepository';

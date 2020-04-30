@@ -105,38 +105,41 @@ Vous trouverez parmi notre sélection de biens à la vente des appartements sur 
         // line 22
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["properties"]) || array_key_exists("properties", $context) ? $context["properties"] : (function () { throw new RuntimeError('Variable "properties" does not exist.', 22, $this->source); })()));
+        $context['loop'] = [
+          'parent' => $context['_parent'],
+          'index0' => 0,
+          'index'  => 1,
+          'first'  => true,
+        ];
+        if (is_array($context['_seq']) || (is_object($context['_seq']) && $context['_seq'] instanceof \Countable)) {
+            $length = count($context['_seq']);
+            $context['loop']['revindex0'] = $length - 1;
+            $context['loop']['revindex'] = $length;
+            $context['loop']['length'] = $length;
+            $context['loop']['last'] = 1 === $length;
+        }
         foreach ($context['_seq'] as $context["_key"] => $context["property"]) {
             // line 23
-            echo "            <div class=\"col-3\">
-                <div class=\"card\">
-                    <div class=\"card-body\">
-                        <h5 class=\"card-title\">
-                            <a href=\"";
-            // line 27
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("property.show", ["id" => twig_get_attribute($this->env, $this->source, $context["property"], "id", [], "any", false, false, false, 27), "slug" => twig_get_attribute($this->env, $this->source, $context["property"], "slug", [], "any", false, false, false, 27)]), "html", null, true);
-            echo "\">";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["property"], "title", [], "any", false, false, false, 27), "html", null, true);
-            echo "</a>
-                        </h5>
-                        <p classe=\"card-text\">";
-            // line 29
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["property"], "city", [], "any", false, false, false, 29), "html", null, true);
-            echo " (";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["property"], "postalCode", [], "any", false, false, false, 29), "html", null, true);
-            echo ")</p>
-                        <div class=\"text-primary\" style=\"font-weight: bold; font-size: 2rem\">";
-            // line 30
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["property"], "formattedPrice", [], "any", false, false, false, 30), "html", null, true);
-            echo " €</div>
-                    </div>
-                </div>
-            </div>
+            echo "                <div class=\"col-3\">
+                    ";
+            // line 24
+            $this->loadTemplate("property/_property.html.twig", "pages/home.html.twig", 24)->display($context);
+            // line 25
+            echo "                </div>
             ";
+            ++$context['loop']['index0'];
+            ++$context['loop']['index'];
+            $context['loop']['first'] = false;
+            if (isset($context['loop']['length'])) {
+                --$context['loop']['revindex0'];
+                --$context['loop']['revindex'];
+                $context['loop']['last'] = 0 === $context['loop']['revindex0'];
+            }
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['property'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 35
+        // line 27
         echo "        </div>
     </div>
 ";
@@ -160,7 +163,7 @@ Vous trouverez parmi notre sélection de biens à la vente des appartements sur 
 
     public function getDebugInfo()
     {
-        return array (  140 => 35,  129 => 30,  123 => 29,  116 => 27,  110 => 23,  106 => 22,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  143 => 27,  128 => 25,  126 => 24,  123 => 23,  106 => 22,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -187,21 +190,12 @@ Vous trouverez parmi notre sélection de biens à la vente des appartements sur 
         <h2>Les derniers biens</h2>
         <div class=\"row flex\">
             {% for property in properties %}
-            <div class=\"col-3\">
-                <div class=\"card\">
-                    <div class=\"card-body\">
-                        <h5 class=\"card-title\">
-                            <a href=\"{{ path ('property.show', {id: property.id, slug: property.slug}) }}\">{{ property.title }}</a>
-                        </h5>
-                        <p classe=\"card-text\">{{ property.city }} ({{ property.postalCode }})</p>
-                        <div class=\"text-primary\" style=\"font-weight: bold; font-size: 2rem\">{{ property.formattedPrice }} €</div>
-                    </div>
+                <div class=\"col-3\">
+                    {% include 'property/_property.html.twig' %}
                 </div>
-            </div>
             {% endfor %}
         </div>
     </div>
-{% endblock %}
-", "pages/home.html.twig", "C:\\workspace\\homeaway\\templates\\pages\\home.html.twig");
+{% endblock %}", "pages/home.html.twig", "C:\\workspace\\homeaway\\templates\\pages\\home.html.twig");
     }
 }

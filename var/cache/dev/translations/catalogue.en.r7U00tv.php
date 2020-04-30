@@ -266,7 +266,7 @@ $catalogueFr = new MessageCatalogue('fr', array (
     'download' => 'Télécharger',
     'form.label.delete' => 'Supprimer ?',
   ),
-  'form' => 
+  'forms' => 
   array (
     'Title' => 'Titre',
     'Rooms' => 'Pieces',
@@ -281,7 +281,9 @@ $catalogueFr = new MessageCatalogue('fr', array (
     'Firstname' => 'Prénom',
     'Name' => 'Nom',
     'Phone' => 'Téléphone',
-    'Picture fils' => 'Images',
+    'Picture files' => 'Images',
+    'Electric' => 'Electrique',
+    'Gas' => 'Gaz',
   ),
 ));
 $catalogue->addFallbackCatalogue($catalogueFr);
